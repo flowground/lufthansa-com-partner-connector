@@ -1,0 +1,17 @@
+{
+    "type": "object",
+    "properties": {
+        "ticketnumber": {
+            "required": true,
+            "type": "string"
+        },
+        "emailAddress": {
+            "required": true,
+            "type": "string"
+        },
+        "Accept": {
+            "required": true,
+            "type": "string"
+        }
+    }
+}

@@ -1,0 +1,321 @@
+{
+    "title": "LH Partner",
+    "docsUrl": "",
+    "url": "https://api.apis.guru/v2/specs/lufthansa.com/partner/1.0/swagger.json",
+    "envVars": {
+        "OAUTH_CLIENT_ID": {
+            "description": "OAuth Client ID"
+        },
+        "OAUTH_CLIENT_SECRET": {
+            "description": "OAuth Client Secret"
+        }
+    },
+    "credentials": {
+        "fields": {
+            "server": {
+                "label": "Server",
+                "viewClass": "SelectView",
+                "model": [
+                    "https://api.lufthansa.com/v1",
+                    "--- Custom URL"
+                ],
+                "required": true
+            },
+            "otherServer": {
+                "label": "Custom Server URL",
+                "viewClass": "TextFieldView"
+            },
+            "auth": {
+                "label": "auth",
+                "viewClass": "OAuthFieldView"
+            }
+        },
+        "oauth2": {
+            "client_id": "{{OAUTH_CLIENT_ID}}",
+            "client_secret": "{{OAUTH_CLIENT_SECRET}}",
+            "token_uri": "https://api.lufthansa.com/v1/partners/oauth/token"
+        }
+    },
+    "triggers": {
+        "startFlow": {
+            "main": "./lib/triggers/startFlow.js",
+            "type": "polling",
+            "title": "Start Flow",
+            "fields": {}
+        }
+    },
+    "actions": {
+        "Baggage_Trip_and_Contact": {
+            "main": "./lib/actions/Baggage_Trip_and_Contact.js",
+            "title": "Baggage Trip and Contact",
+            "description": "Retrieve passenger trip, contact and baggage details. This service is only accessible for LH privileged partners",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Baggage_Trip_and_Contact.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "All_Fares": {
+            "main": "./lib/actions/All_Fares.js",
+            "title": "All Fares",
+            "description": "Retrieves all available fares for a specific Origin & Destination pair on a given date. Available fares are: One-way and Return for 4U. Return only for OS",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/All_Fares.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Best_Fares": {
+            "main": "./lib/actions/Best_Fares.js",
+            "title": "Best Fares",
+            "description": "Retrieve best fares for the requested journey across multiple days or multiple months.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Best_Fares.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Deep_Links": {
+            "main": "./lib/actions/Deep_Links.js",
+            "title": "Deep Links",
+            "description": "Returns valid deep links for the provided input parameters",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Deep_Links.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "LH_Deep_Links___FFP": {
+            "main": "./lib/actions/LH_Deep_Links___FFP.js",
+            "title": "LH Deep Links - FFP",
+            "description": "Returns valid LH deep links (FFP - links to flight selection screen on LH.COM)",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/LH_Deep_Links___FFP.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "LH_Deep_Links___ITCO": {
+            "main": "./lib/actions/LH_Deep_Links___ITCO.js",
+            "title": "LH Deep Links - ITCO",
+            "description": "Returns valid LH deep links (ITCO - links to shopping cart on LH.COM)",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/LH_Deep_Links___ITCO.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Fares": {
+            "main": "./lib/actions/Fares.js",
+            "title": "Fares",
+            "description": "Retrieve all available fares per fare family for a specific Origin & Destination on a given date",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Fares.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Lowest_Fares": {
+            "main": "./lib/actions/Lowest_Fares.js",
+            "title": "Lowest Fares",
+            "description": "Retrieve lowest fare for a specific Origin & Destination pair on a given date. Available fares are: One-way and Return for 4U. Return only for OS & LH",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Lowest_Fares.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Fares_Subscriptions": {
+            "main": "./lib/actions/Fares_Subscriptions.js",
+            "title": "Fares Subscriptions",
+            "description": "Create a subscription for best price O&D. Receive regular updates on lowest fares",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Fares_Subscriptions.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "OND_Route": {
+            "main": "./lib/actions/OND_Route.js",
+            "title": "OND Route",
+            "description": "Returns LH route origin & destination information",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/OND_Route.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "OND_Status": {
+            "main": "./lib/actions/OND_Status.js",
+            "title": "OND Status",
+            "description": "Returns LH network route status information. Search for recently added or retired routes",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/OND_Status.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Top_OND": {
+            "main": "./lib/actions/Top_OND.js",
+            "title": "Top OND",
+            "description": "Returns LH Top routes per country or across all countries",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Top_OND.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Orders": {
+            "main": "./lib/actions/Orders.js",
+            "title": "Orders",
+            "description": "Retrieve order by ID and optionally name. This service is only accessible for LH privileged partners",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Orders.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Auto_Check_In": {
+            "main": "./lib/actions/Auto_Check_In.js",
+            "title": "Auto Check-In",
+            "description": "Trigger an automatic check-in given a ticket number. This service is only accessible for LH privileged partners",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Auto_Check_In.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Price_Offers": {
+            "main": "./lib/actions/Price_Offers.js",
+            "title": "Price Offers",
+            "description": "Retrieve a best price offer given an origin and destination.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Price_Offers.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Seat_Details": {
+            "main": "./lib/actions/Seat_Details.js",
+            "title": "Seat Details",
+            "description": "A description of all available seat details by aircraft type. You can retrieve the full set or details for a particular aircraft type.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Seat_Details.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        }
+    }
+}

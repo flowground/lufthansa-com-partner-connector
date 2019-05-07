@@ -1,0 +1,30 @@
+{
+    "type": "object",
+    "properties": {
+        "origin": {
+            "required": true,
+            "type": "string"
+        },
+        "destination": {
+            "required": true,
+            "type": "string"
+        },
+        "Accept": {
+            "required": true,
+            "type": "string"
+        },
+        "catalogues": {
+            "required": false,
+            "type": "string",
+            "default": "LH"
+        },
+        "limit": {
+            "required": false,
+            "type": "string"
+        },
+        "offset": {
+            "required": false,
+            "type": "string"
+        }
+    }
+}

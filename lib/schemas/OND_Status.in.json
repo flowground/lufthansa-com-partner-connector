@@ -1,0 +1,22 @@
+{
+    "type": "object",
+    "properties": {
+        "Accept": {
+            "required": true,
+            "type": "string"
+        },
+        "catalogues": {
+            "required": false,
+            "type": "string",
+            "default": "LH"
+        },
+        "new_routes": {
+            "required": false,
+            "type": "string"
+        },
+        "old_routes": {
+            "required": false,
+            "type": "string"
+        }
+    }
+}

@@ -1,0 +1,49 @@
+{
+    "type": "object",
+    "properties": {
+        "catalogues": {
+            "required": true,
+            "type": "string"
+        },
+        "origin": {
+            "required": true,
+            "type": "string"
+        },
+        "destination": {
+            "required": true,
+            "type": "string"
+        },
+        "range": {
+            "required": true,
+            "type": "string"
+        },
+        "Accept": {
+            "required": true,
+            "type": "string"
+        },
+        "country": {
+            "required": false,
+            "type": "string"
+        },
+        "trackingid": {
+            "required": false,
+            "type": "string"
+        },
+        "travel_date": {
+            "required": true,
+            "type": "string"
+        },
+        "trip_duration": {
+            "required": true,
+            "type": "string"
+        },
+        "cabin_class": {
+            "required": false,
+            "type": "string"
+        },
+        "fare_family": {
+            "required": false,
+            "type": "string"
+        }
+    }
+}

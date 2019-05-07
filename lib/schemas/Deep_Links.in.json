@@ -1,0 +1,85 @@
+{
+    "type": "object",
+    "properties": {
+        "catalogues": {
+            "required": true,
+            "type": "string"
+        },
+        "trackingid": {
+            "required": true,
+            "type": "string"
+        },
+        "country": {
+            "required": true,
+            "type": "string"
+        },
+        "lang": {
+            "required": true,
+            "type": "string"
+        },
+        "Accept": {
+            "required": true,
+            "type": "string"
+        },
+        "origin": {
+            "required": false,
+            "type": "string"
+        },
+        "destination": {
+            "required": false,
+            "type": "string"
+        },
+        "travelers": {
+            "required": false,
+            "type": "string"
+        },
+        "fare": {
+            "required": false,
+            "type": "string"
+        },
+        "partnerid": {
+            "required": false,
+            "type": "string"
+        },
+        "origin_name": {
+            "required": false,
+            "type": "string"
+        },
+        "destination_name": {
+            "required": false,
+            "type": "string"
+        },
+        "travel_date": {
+            "required": false,
+            "type": "string"
+        },
+        "return_date": {
+            "required": false,
+            "type": "string"
+        },
+        "cabin_class": {
+            "required": false,
+            "type": "string"
+        },
+        "outbound_segments": {
+            "required": false,
+            "type": "string"
+        },
+        "return_segments": {
+            "required": false,
+            "type": "string"
+        },
+        "net_fare": {
+            "required": false,
+            "type": "string"
+        },
+        "fare_currency": {
+            "required": false,
+            "type": "string"
+        },
+        "encryption_key": {
+            "required": false,
+            "type": "string"
+        }
+    }
+}

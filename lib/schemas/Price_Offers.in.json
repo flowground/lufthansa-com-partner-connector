@@ -1,0 +1,26 @@
+{
+    "type": "object",
+    "properties": {
+        "origin": {
+            "required": true,
+            "type": "string"
+        },
+        "destination": {
+            "required": true,
+            "type": "string"
+        },
+        "departureDate": {
+            "required": true,
+            "type": "string"
+        },
+        "returnDate": {
+            "required": true,
+            "type": "string"
+        },
+        "service": {
+            "required": false,
+            "type": "string",
+            "default": "amadeusBestPrice"
+        }
+    }
+}

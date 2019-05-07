@@ -1,0 +1,13 @@
+{
+    "type": "object",
+    "properties": {
+        "searchID": {
+            "required": true,
+            "type": "string"
+        },
+        "Accept": {
+            "required": true,
+            "type": "string"
+        }
+    }
+}

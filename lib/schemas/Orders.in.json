@@ -1,0 +1,17 @@
+{
+    "type": "object",
+    "properties": {
+        "orderID": {
+            "required": true,
+            "type": "string"
+        },
+        "Accept": {
+            "required": true,
+            "type": "string"
+        },
+        "name": {
+            "required": true,
+            "type": "string"
+        }
+    }
+}

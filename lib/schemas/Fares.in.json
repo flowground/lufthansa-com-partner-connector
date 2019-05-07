@@ -1,0 +1,30 @@
+{
+    "type": "object",
+    "properties": {
+        "catalogues": {
+            "required": true,
+            "type": "string"
+        },
+        "segments": {
+            "required": true,
+            "type": "string"
+        },
+        "carriers": {
+            "required": true,
+            "type": "string"
+        },
+        "Accept": {
+            "required": true,
+            "type": "string"
+        },
+        "travelers": {
+            "required": false,
+            "type": "string"
+        },
+        "fare_types": {
+            "required": false,
+            "type": "string",
+            "default": "basic"
+        }
+    }
+}

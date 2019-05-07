@@ -1,0 +1,22 @@
+{
+    "type": "object",
+    "properties": {
+        "aircraftCode": {
+            "required": true,
+            "type": "string"
+        },
+        "Accept": {
+            "required": true,
+            "type": "string"
+        },
+        "cabinCode": {
+            "required": true,
+            "type": "string",
+            "default": "C"
+        },
+        "lang": {
+            "required": false,
+            "type": "string"
+        }
+    }
+}

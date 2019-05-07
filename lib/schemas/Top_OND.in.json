@@ -1,0 +1,18 @@
+{
+    "type": "object",
+    "properties": {
+        "Accept": {
+            "required": true,
+            "type": "string"
+        },
+        "catalogues": {
+            "required": false,
+            "type": "string",
+            "default": "LH"
+        },
+        "origin": {
+            "required": false,
+            "type": "string"
+        }
+    }
+}
